@@ -1,14 +1,21 @@
 $(document).ready(function () {
-    // 1. Toggle the signup form
-    $('#signuplink').click(function (e) {
-      e.preventDefault();
-      $('#newsSignup').slideToggle();
-      let current = $('#openclose').text();
-      $('#openclose').text(current === '+' ? '-' : '+');
+    // Hide the newsletter form initially
+    $("#newsSignup").hide();
+  
+    // Signup link click event
+    $("#signuplink").click(function (event) {
+      event.preventDefault();
+  
+      // Toggle form visibility with slide effect
+      $("#newsSignup").slideToggle();
+  
+      // Change + to - and vice versa
+      let sign = $("#openclose").text();
+      $("#openclose").text(sign === "+" ? "-" : "+");
     });
   
-    // 2. Hover animation for the slogan
-    $('#slogan').hover(
+    // Slogan hover effect
+    $("#slogan").hover(
       function () {
         $(this).fadeOut("normal", "linear", function () {
           $(this).text("Hand Picked Just for You").fadeIn("slow", "swing");
@@ -21,14 +28,15 @@ $(document).ready(function () {
       }
     );
   
-    // 3. Animate the rose on page load
-    $('#rose').animate({ right: '100px', opacity: 1 }, 1500, "swing");
+    // Animate the rose image on page load
+    $("#rose").animate({ right: "100px", opacity: 1 }, 1500, "swing");
   
-    // 4. Form submission event
-    $('#newsSignup').submit(function (e) {
-      e.preventDefault();
-      alert("Thank you for registering!");
+    // Form submission event
+    $("#newsSignup").submit(function (event) {
+      alert("Thank you for registering");
       $(this).hide();
-      $('#signuplink').fadeTo("slow", 0.3);
+      $("#signuplink").fadeTo("slow", 0.3);
+      event.preventDefault();
     });
   });
+  
