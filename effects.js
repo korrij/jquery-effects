@@ -1,18 +1,11 @@
-$(document).ready(function () {
-    // Hide the newsletter form initially
-    $("#newsSignup").hide();
-  
-    // Signup link click event
-    $("#signuplink").click(function (event) {
-      event.preventDefault();
-  
-      // Toggle form visibility with slide effect
-      $("#newsSignup").slideToggle();
-  
-      // Change + to - and vice versa
-      let sign = $("#openclose").text();
-      $("#openclose").text(sign === "+" ? "-" : "+");
+$(document).ready(function(){
+    $('#signuplink').click(function(e){
+      e.preventDefault();
+      $('#newsSignup').slideToggle();
+      var sign = $('#openclose').text() === '+' ? '-' : '+';
+      $('#openclose').text(sign);
     });
+  });
   
     // Slogan hover effect
     $("#slogan").hover(
@@ -29,13 +22,13 @@ $(document).ready(function () {
     );
   
     // Animate the rose image on page load
-    $("#rose").animate({ right: "100px", opacity: 1 }, 1500, "swing");
+    $('#rose').animate({right: '20px', opacity: 1}, 2000);
   
     // Form submission event
-    $("#newsSignup").submit(function (event) {
-      alert("Thank you for registering");
-      $(this).hide();
-      $("#signuplink").fadeTo("slow", 0.3);
-      event.preventDefault();
-    });
-  });
+    $(document).ready(function(){
+        $('#newsSignup').submit(function(e){
+          e.preventDefault();
+          // Display thank-you message
+          $(this).replaceWith('<p>Thank you for signing up!</p>');
+        });
+      });
