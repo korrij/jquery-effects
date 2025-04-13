@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <title>jQuery Animation and Effects</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link href="effects.css" rel="stylesheet">
-    <script src="effects.js"></script>
+    
+    <!-- Load jQuery first -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-
-	</head>
+    
+    <!-- Then load your custom script -->
+    <script src="effects.js"></script>
+  </head>
 
   <body>
     <div id="container">
@@ -37,7 +40,7 @@
 
         <div id="newsletter">
           <p><a href="#" id="signuplink"><span id="openclose">+</span> Sign up for our newsletter</a></p>
-          <form name="newsSignup" method="post" action="thanks.html" id="newsSignup">
+          <form name="newsSignup" method="post" action="thanks.html" id="newsSignup" style="display: none;">
             <label>Name: <input type="text" name="uname"></label>
             <label>Email address: <input type="email" name="email"></label>
             <input type="submit" value="Sign Up">
